@@ -6,8 +6,7 @@
   "dependencies": {
     "ht16k33-fourteensegment-display": "^0.1.1",
     "inotify": "^1.4.1",
-    "debug": "^2.2.0",
-    "node-hid": "^0.5.2"
+    "minidsp": "git://github.com/markubiak/node-minidsp.git"
   },
   "devDependencies": {},
   "scripts": {
@@ -16,6 +15,9 @@
   "repository": {
     "type": "git",
     "url": "https://www.github.com/markubiak/minidsp-control"
+  },
+  "bin": {
+    "minidsp-control": "minidsp-control.js"
   },
   "keywords": [
     "MiniDSP",
