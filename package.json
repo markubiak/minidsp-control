@@ -1,6 +1,6 @@
 {
   "name": "minidsp-control",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Displays status of the MiniDSP 2x4 HD connected over USB via an Adafruit 14 segment display",
   "main": "minidsp-control.js",
   "dependencies": {
