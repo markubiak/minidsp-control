@@ -138,7 +138,9 @@ function vol_str(source) {
 	if (typeof source != 'number') {
 		return "";
 	}
-	if (source % 1 === 0) {
+	if (source <= -100) {
+		return Math.round(source).toString();
+	} else if (source % 1 === 0) {
 		return (source.toString() + ".0");
 	} else {
 		return source.toString();
@@ -161,7 +163,7 @@ function mute_loop(show_mute) {
 
 function minidsp_control(command) {
 	try {
-	switch (command) {
+	switch (command.split(' ')[0]) {
 		case "kill":
 			console.log("exiting...");
 			if (_device) {
@@ -210,6 +212,11 @@ function minidsp_control(command) {
 			break;
 		case "volume-down":
 			var newvol = current_status.volume - 0.5;
+			console.log("setting volume to " + newvol);
+			device().setVolume(newvol);
+			break;
+		case "volume-set":
+			var newvol = command.split(' ')[1];
 			console.log("setting volume to " + newvol);
 			device().setVolume(newvol);
 			break;
